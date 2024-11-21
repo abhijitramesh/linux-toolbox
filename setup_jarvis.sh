@@ -39,6 +39,9 @@ update_ssh_config() {
             echo "    HostName $ip" >> "$temp_file"
             echo "    Port $port" >> "$temp_file"
             echo "    User root" >> "$temp_file"
+            echo "    ForwardAgent yes" >> "$temp_file"
+            echo "    UseKeychain yes" >> "$temp_file"
+            echo "    StrictHostKeyChecking no" >> "$temp_file"
             host_found=true
             
             # Skip the existing host block
@@ -60,6 +63,9 @@ update_ssh_config() {
         echo "    HostName $ip" >> "$temp_file"
         echo "    Port $port" >> "$temp_file"
         echo "    User root" >> "$temp_file"
+        echo "    ForwardAgent yes" >> "$temp_file"
+        echo "    UseKeychain yes" >> "$temp_file"
+        echo "    StrictHostKeyChecking no" >> "$temp_file"
     fi
     
     # Move new config in place and set permissions
