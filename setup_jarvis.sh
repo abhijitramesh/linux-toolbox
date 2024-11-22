@@ -136,4 +136,7 @@ ssh "$HOSTNAME" "bash /tmp/install_plugins.sh && rm /tmp/install_plugins.sh"
 # Clean up local temporary script
 rm "$TMP_SCRIPT"
 
+# Add local bin to PATH
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+
 echo "Setup completed successfully!" 
