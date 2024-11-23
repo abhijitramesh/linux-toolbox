@@ -137,6 +137,6 @@ ssh "$HOSTNAME" "bash /tmp/install_plugins.sh && rm /tmp/install_plugins.sh"
 rm "$TMP_SCRIPT"
 
 # Add local bin to PATH
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+ssh "$HOSTNAME" "echo 'export PATH=\"\$HOME/.local/bin:\$PATH\"' >> ~/.zshrc"
 
 echo "Setup completed successfully!" 
